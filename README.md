@@ -2,7 +2,14 @@
 
 ## Intro:
 
-    Social Doby es una propuesta de Red social para unificar refugios y veterinarias a la vez que los usuarios podran inscribir a sus mascotas dandole voz tal como lo hacemos nosotros en las redes sociales, plataforma con el objetivo de mejorar los derechos de los animales a travez de concienciar a la población, dando lugar a pompartir solo publicaciónes de ellos teniendo perfil propio y apartados donde encontrar las veterinarias más cercanas a los usuarios y otro apratado donde localizar a las asosiaciones de animales donde ademas de poder pedirles ayuda tambien ayudarlas, esta es la idea principal de la App que se desarrollará de forma altruista y sin animo de lucro.
+Social Doby es una propuesta de Red social para unificar refugios y veterinarias a la vez que los
+usuarios podran inscribir a sus mascotas dandole voz tal como lo hacemos nosotros en las redes
+sociales, plataforma con el objetivo de mejorar los derechos de los animales a travez de
+concienciar a la población, dando lugar a pompartir solo publicaciónes de ellos teniendo perfil
+propio y apartados donde encontrar las veterinarias más cercanas a los usuarios y otro apratado
+donde localizar a las asosiaciones de animales donde ademas de poder pedirles ayuda tambien
+ayudarlas, esta es la idea principal de la App que se desarrollará de forma altruista y sin animo
+de lucro.
 
 ## Contacto:
 
