@@ -23,7 +23,7 @@ const main = async () => {
                 email VARCHAR(100) UNIQUE NOT NULL,
                 password VARCHAR(100) NOT NULL,
                 username VARCHAR(100) UNIQUE NOT NULL,
-                ownername VARCAHR(100) NOT NULL, 
+                ownername VARCHAR(100) NOT NULL, 
                 type ENUM('Perro', 'Gato') DEFAULT 'Gato',
                 avatar VARCHAR(100),
                 place VARCHAR (70),
