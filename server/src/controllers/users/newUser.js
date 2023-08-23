@@ -4,7 +4,9 @@ const newUser = async (req, res, next) => {
   try {
     const { email, username, password, type } = req.body;
 
-    await insertUserQuery(email, username, password, role);
+    //await validateSchema(newUserSchema, req.body);
+
+    await insertUserQuery(email, username, password, type);
 
     res.send({
       status: 'ok',
