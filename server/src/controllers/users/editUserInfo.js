@@ -10,7 +10,7 @@ const editUserInfo = async (req, res, next) => {
 
         await validateSchema(editPersonalInfoSchema, req.body);
 
-        await selectUsersByIdQuery(req.user.id);
+        const user = await selectUsersByIdQuery(req.user.id);
 
         await updateUserInfoQuery(personalInfo, req.user.id);
 

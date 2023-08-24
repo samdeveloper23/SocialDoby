@@ -8,7 +8,7 @@ const selectUserEmailQuery = async (email) => {
     connection = await getDB();
 
     const [users] = await connection.query(
-      `SELECT id, password, active, type FROM users WHERE email = ?`,
+      `SELECT id, password, active, role FROM users WHERE email = ?`,
       [email]
     );
 
@@ -18,7 +18,7 @@ const selectUserEmailQuery = async (email) => {
 
     if (users[0].active === 0) {
       generateError(
-        'Su cuenta a sido desactivada por violación de politica, pongase en contacto con el equipo de Social Doby',
+        'Es necesario activar la cuenta a traves de la verificación por email',
         401
       );
     }

@@ -21,7 +21,7 @@ const UserListItem = ({ user }) => {
                     className={`userInfoList ${isDarkMode ? 'dark' : 'light'}`}
                 >
                     <div>{user.username}</div>
-                    <div>{user.type}</div>
+                    <div>{user.role}</div>
                     <div>{user.place}</div>
                 </div>
             </li>
@@ -33,7 +33,7 @@ UserListItem.propTypes = {
     user: PropTypes.shape({
         id: PropTypes.number.isRequired,
         username: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
+        role: PropTypes.string.isRequired,
         avatar: PropTypes.string,
         place: PropTypes.string,
     }),

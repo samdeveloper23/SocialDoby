@@ -17,12 +17,13 @@ const insertPublicationQuery = async (
         const createdAt = new Date();
 
         const [publication] = await connection.query(
-            `INSERT INTO publications(title, photoName, videoName, place, description, userId, createdAt) VALUES( ?, ?, ?, ?, ?, ?, ?)`,
+            `INSERT INTO publications(title, photoName, videoName, place, type, description, userId, createdAt) VALUES(?, ?, ?, ?, ?, ?, ?, ?)`,
             [
                 title,
                 photoName,
                 videoName,
                 place,
+                type,
                 description,
                 userId,
                 createdAt,
@@ -35,6 +36,7 @@ const insertPublicationQuery = async (
             photoName,
             videoName,
             place,
+            type,
             description,
             userId,
             createdAt,

@@ -21,6 +21,7 @@ const PublicationCreateForm = ({ token }) => {
     const [video, setVideo] = useState(null);
     const [pre, setPre] = useState(null);
     const [title, setTitle] = useState('');
+    const [type, setType] = useState('Normal');
     const [place, setPlace] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
@@ -78,6 +79,7 @@ const PublicationCreateForm = ({ token }) => {
                 video,
                 title,
                 place,
+                type,
                 token
             );
 
@@ -89,6 +91,10 @@ const PublicationCreateForm = ({ token }) => {
         } finally {
             setLoading(false);
         }
+    };
+
+    const handleOptionType = (e) => {
+        setType(e.target.value);
     };
 
     const getPlace = async (e) => {
@@ -155,6 +161,20 @@ const PublicationCreateForm = ({ token }) => {
                         accept='image/*,video/*'
                         style={{ display: 'none' }}
                     />
+                    <div>
+                        <label htmlFor='options'>Tipo de publicación: </label>
+                        <select
+                            className='select-type'
+                            id='options'
+                            value={type}
+                            onChange={handleOptionType}
+                        >
+                            <option value='Normal'>No especificar</option>
+                            <option value='Alquiler'>Alquiler</option>
+                            <option value='Colaboración'>Colaboración</option>
+                            <option value='Empleo'>Empleo</option>
+                        </select>
+                    </div>
 
                     {showResult ? (
                         <div className='ubication-pub'>

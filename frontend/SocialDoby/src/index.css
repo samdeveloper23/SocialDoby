@@ -7,11 +7,11 @@
 }
 
 :root {
-    --primerColor: #81fcbe;
-    --segundoColor: #b7f5d6;;
+    --primerColor: #6d7566;
+    --segundoColor: #9f8c6c;
     --tercerColor: #d9d9d9;
-    --cuartoColor: #747778;
-    --quintoColor: #272727;
+    --cuartoColor: #5d5d5d;
+    --quintoColor: #202020;
 }
 
 html {

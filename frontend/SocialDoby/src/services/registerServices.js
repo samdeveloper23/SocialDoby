@@ -1,4 +1,4 @@
-const registerService = async (username, email, password, type) => {
+const registerService = async (username, ownername, email, password, role) => {
     const res = await fetch('http://localhost:8000/users', {
         method: 'post',
         headers: {
@@ -6,9 +6,10 @@ const registerService = async (username, email, password, type) => {
         },
         body: JSON.stringify({
             username,
+            ownername,
             email,
             password,
-            type,
+            role,
         }),
     });
 

@@ -18,21 +18,23 @@ const main = async () => {
         console.log('Creando tablas...');
 
         await connection.query(`
-            CREATE TABLE IF NOT EXISTS users (
-                id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
-                email VARCHAR(100) UNIQUE NOT NULL,
-                password VARCHAR(100) NOT NULL,
-                username VARCHAR(100) UNIQUE NOT NULL,
-                ownername VARCHAR(100) NOT NULL, 
-                type ENUM('Perro', 'Gato') DEFAULT 'Gato',
-                avatar VARCHAR(100),
-                place VARCHAR (70),
-                personalInfo VARCHAR(300),
-                active BOOLEAN DEFAULT true,
-                recoverPassCode VARCHAR(50),
-                createdAt DATETIME NOT NULL,
-                modifiedAt DATETIME
-            )
+        CREATE TABLE IF NOT EXISTS users (
+            id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+            email VARCHAR(100) UNIQUE NOT NULL,
+            password VARCHAR(100) NOT NULL,
+            username VARCHAR(100) UNIQUE NOT NULL,
+            ownername VARCHAR(100) NOT NULL,
+            role ENUM('Gato', 'Perro') DEFAULT 'Gato',
+            avatar VARCHAR(100),
+            place VARCHAR(70),
+            personalInfo VARCHAR(300),
+            active BOOLEAN DEFAULT false,
+            registrationCode VARCHAR(50),
+            recoverPassCode VARCHAR(50),
+            createdAt DATETIME NOT NULL,
+            modifiedAt DATETIME
+        )
+        
         `);
 
         await connection.query(`
@@ -42,6 +44,7 @@ const main = async () => {
                 photoName VARCHAR(100),
                 videoName VARCHAR(100),
                 place VARCHAR(100),
+                type ENUM ( 'Normal', 'Colaboración', 'Refugio', 'Veterinaria') DEFAULT 'Normal',
                 description VARCHAR(200),
                 userId INT UNSIGNED NOT NULL,
                 createdAt DATETIME NOT NULL,

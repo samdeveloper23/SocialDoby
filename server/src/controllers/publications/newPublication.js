@@ -39,6 +39,7 @@ const newPublication = async (req, res, next) => {
             photoName,
             videoName,
             place,
+            type,
             description,
             req.user.id
         );

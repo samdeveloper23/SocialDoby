@@ -20,10 +20,10 @@ const sendRecoverPass = async (req, res, next) => {
 
         await updateUserRecoverPassQuery(email, recoverPassCode);
 
-        const emailSubject = 'SocialDoby: Recuperación de contraseña';
+        const emailSubject = 'TattooArt: Recuperación de contraseña';
 
         const emailBody = `
-            Se ha solicitado la recuperación de contraseña para este email en SocialDoby. 
+            Se ha solicitado la recuperación de contraseña para este email en TattooArt. 
             
             Introduce el siguiente código en nuestra plataforma para crear una nueva contraseña: ${recoverPassCode}
 

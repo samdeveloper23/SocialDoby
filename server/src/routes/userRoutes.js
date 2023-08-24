@@ -5,6 +5,7 @@ const userExists = require('../middlewares/userExists');
 
 const {
     newUser,
+    validateCode,
     loginUsers,
     getUser,
     getOwnUser,
@@ -17,12 +18,18 @@ const {
     editUserInfo,
 } = require('../controllers/users');
 const authUserOptional = require('../middlewares/authUserOptional');
+const activationStatus = require('../controllers/users/activationStatus');
 const editUserPlace = require('../controllers/users/editUserPlace');
 
 //MIDDLEWARES USERS
 
-//Crea un usuario.
+//Crea un usuario pendiente de validar.
 route.post(`/users`, newUser);
+
+//Valida a un usuario recién registrado para darle acceso.
+route.get('/users/validate/:regCode', validateCode);
+
+route.post('/users/activation-status', activationStatus);
 
 //Logea a un usuario retornando un token.
 route.post('/users/login', loginUsers);

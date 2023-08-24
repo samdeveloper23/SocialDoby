@@ -2,8 +2,12 @@ import { NavLink } from 'react-router-dom';
 import Logo from '../Logo/Logo';
 
 const InfoContainer = () => {
+    const pass = 'HACKaBOSS';
+
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        sessionStorage.setItem('pass', pass);
     };
 
     return (
@@ -12,9 +16,9 @@ const InfoContainer = () => {
                 <Logo />
             </div>
             <div>
-                <h2 className='info-title'>Bienvenido a SocialDoby</h2>
+                <h2 className='info-title'>Nombre de la Empresa</h2>
                 <div className='info-text'>
-                    <p>Registra a tu compañero de vida y dazle voz</p>
+                    <p>Descripción.</p>
                 </div>
                 <div className='buttonsInfoContainer'>
                     <div onClick={handleSubmit}>
@@ -27,11 +31,6 @@ const InfoContainer = () => {
                             Login
                         </NavLink>
                     </div>
-                </div>
-                <div>
-                    <NavLink className='guest-button' to='/home'>
-                        Conocenos antes de registrarte
-                    </NavLink>
                 </div>
             </div>
         </div>

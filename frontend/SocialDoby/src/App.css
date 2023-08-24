@@ -27,7 +27,8 @@ form {
 }
 
 .intro {
-    background-image: url('./assets/images/background.jpg');
+    background-image: url('./assets/images/entrada.jpg');
+    /* background-color: rgb(176, 175, 175); */
     background-size: cover;
 }
 

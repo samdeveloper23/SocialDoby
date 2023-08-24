@@ -11,10 +11,9 @@ const selectAllUsersQuery = async (keyword = '') => {
             `
           SELECT 
               id, 
-              username,
-              ownername, 
+              username, 
               email, 
-              type, 
+              role, 
               avatar,
               place
           FROM users 
@@ -26,7 +25,7 @@ const selectAllUsersQuery = async (keyword = '') => {
         // Si no hay usuarios, lanzamos un error.
         if (users.length < 1) {
             generateError(
-                'Todavía no hay usuarios de cuatro patitas. ¡Regístrate y sé el primero!',
+                'Todavía no hay usuarios. ¡Regístrate y sé el primero!',
                 404
             );
         }

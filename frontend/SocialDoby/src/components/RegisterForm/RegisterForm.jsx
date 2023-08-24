@@ -11,11 +11,11 @@ const RegisterForm = () => {
     const navigate = useNavigate();
 
     const [username, setUsername] = useState('');
+    const [ownername, setOwnername] = useState('');
     const [email, setEmail] = useState('');
     const [firstPassword, setFirstPassword] = useState('');
     const [passwordConfirm, setPasswordConfirm] = useState('');
-    const [type, setType] = useState('Gato');
-    const [ownername, setOwnername] = useState('');
+    const [role, setRole] = useState('Artista');
     const [confirmations, setConfirmations] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
@@ -44,12 +44,12 @@ const RegisterForm = () => {
                         ownername,
                         email,
                         password,
-                        type
+                        role
                     )
                 );
                 setErrorMessage(confirmations);
                 setShowModal(true);
-                navigate('/home');
+                navigate('/activated');
             } else {
                 setErrorMessage('Las contraseñas no coinciden');
                 setShowModal(true);
@@ -74,7 +74,7 @@ const RegisterForm = () => {
                 <div className='register-input'>
                     <h2 className='register-input h2'>Registro</h2>
                     <div className='imputsLab'>
-                        <label htmlFor='username'>Nombre de su mascota:</label>
+                        <label htmlFor='username'>Nombre del compañero:</label>
                         <input
                             type='text'
                             id='username'
@@ -85,7 +85,9 @@ const RegisterForm = () => {
                             maxLength='40'
                         />
 
-                        <label htmlFor=''>Nombre de usuario:</label>
+                        <label htmlFor='username'>
+                            Nombre del propietario:
+                        </label>
                         <input
                             type='text'
                             id='ownername'
@@ -138,8 +140,8 @@ const RegisterForm = () => {
                                 <input
                                     type='checkbox'
                                     id='Gato'
-                                    onChange={() => setType('Gato')}
-                                    checked={type === 'Gato'}
+                                    onChange={() => setRole('Gato')}
+                                    checked={role === 'Gato'}
                                 />
                                 <label className='label-role' htmlFor='role'>
                                     Gato
@@ -149,8 +151,8 @@ const RegisterForm = () => {
                                 <input
                                     type='checkbox'
                                     id='Perro'
-                                    onChange={() => setType('Perro')}
-                                    checked={type === 'Perro'}
+                                    onChange={() => setRole('Perro')}
+                                    checked={role === 'Perro'}
                                 />
                                 <label className='label-role' htmlFor='role'>
                                     Perro

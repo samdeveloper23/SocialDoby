@@ -4,35 +4,37 @@ const express = require('express');
 const colors = require('colors');
 const fileUpload = require('express-fileupload');
 const cors = require('cors');
-
+const path = require('path');
 
 const { errorStandard, notFound } = require('./src/services/errors');
 const userRoutes = require('./src/routes/userRoutes');
 const publicationRoutes = require('./src/routes/publicationRoutes');
 
+const app = express();
 
-const server = express();
+app.use(morgan('dev'));
 
-server.use(morgan('dev'));
+app.use(express.json());
 
-server.use(express.json());
+app.use(fileUpload());
 
-server.use(fileUpload());
+app.use(cors());
 
-server.use(cors());
+app.use(express.static(process.env.UPLOADS_DIR));
 
-server.use(express.static(process.env.UPLOADS_DIR));
+app.use(express.static(path.join(__dirname, 'public')));
 
-server.use(userRoutes);
+//MIDDLEWARE USERS
+app.use(userRoutes);
 
-server.use(publicationRoutes);
+//MIDDLEWARE PUBLICACIONES
+app.use(publicationRoutes);
 
-server.use(errorStandard);
+//******************//
+app.use(errorStandard);
 
-server.use(notFound);
+app.use(notFound);
 
-server.listen(process.env.PORT, () => {
-    console.log(`escuchado en el puerto: ${process.env.PORT}`.bgGreen);
+app.listen(process.env.PORT, () => {
+  console.log(`escuchado en el puerto: ${process.env.PORT}`.bgMagenta);
 });
-
-//SocialDoby

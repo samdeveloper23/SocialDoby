@@ -4,6 +4,7 @@ const joiErrorMessages = require('../joiErrorMessages');
 
 const newUserSchema = joi.object({
     username: joi.string().required().messages(joiErrorMessages),
+    ownername: joi.string().required().messages(joiErrorMessages),
     email: joi
         .string()
         .email({ tlds: { allow: false } })
@@ -18,7 +19,7 @@ const newUserSchema = joi.object({
         )
         .required()
         .messages(joiErrorMessages),
-    role: joi.string().valid('Artista', 'Estudio').required(),
+    role: joi.string().valid('Gato', 'Perro').required(),
 });
 
 module.exports = newUserSchema;

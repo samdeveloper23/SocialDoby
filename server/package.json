@@ -1,13 +1,14 @@
 {
-  "name": "server",
+  "name": "redsocialconlogin",
   "version": "1.0.0",
-  "description": "servidor SocialDoby",
+  "description": "- App para tatuadores.",
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server.js",
     "initDB": "node ./src/db/initDB"
   },
-  "author": "sam machado",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
@@ -26,7 +27,7 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "eslint": "^8.47.0",
+    "eslint": "^8.41.0",
     "nodemon": "^3.0.1"
   }
 }

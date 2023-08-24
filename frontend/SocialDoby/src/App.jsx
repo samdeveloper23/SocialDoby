@@ -3,7 +3,7 @@ import './App.css';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
 import Header from './components/Header/Header';
 import Root from './pages/Root/Root';
-//import ValidatedPage from './pages/ValidatePage/ValidatePage';
+import ValidatedPage from './pages/ValidatePage/ValidatePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import PublicationCreatePage from './pages/PublicationCreatePage/PublicationCreatePage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
@@ -29,7 +29,7 @@ function App() {
                 <Route path='/users' element={<UserListPage />} />
                 <Route path='/users/:userId' element={<UserPage />} />
                 <Route path='/register' element={<RegisterPage />} />
-
+                <Route path='/activated' element={<ValidatedPage />} />
                 <Route path='/login' element={<LoginPage />} />
                 <Route path='/recover' element={<RecoverPassPage />} />
                 <Route path='/login-success' element={<LoginPage />} />
@@ -43,5 +43,3 @@ function App() {
 }
 
 export default App;
-
-// <Route path='/activated' element={<ValidatedPage />} />

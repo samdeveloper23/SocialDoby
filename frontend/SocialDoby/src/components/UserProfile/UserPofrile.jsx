@@ -36,14 +36,12 @@ const UserProfile = ({ user, token }) => {
                 <div className='headerProfile2'>
                     <div className='headerProfile'>
                         <div className='role'>
-                            <div className='role-role'>{user.type}</div>
+                            <div className='role-role'>{user.role}</div>
                         </div>
                         <div className='settingsDiv'>
                             {user.userId === userOwner.userId && (
                                 <NavLink
-                                    className={`settings-button ${
-                                        isDarkMode ? 'dark' : 'light'
-                                    }`}
+                                className={`settings-button ${isDarkMode ? 'dark' : 'light'}`}
                                     to='/settings'
                                 >
                                     <MdSettings
@@ -93,7 +91,7 @@ UserProfile.propTypes = {
     user: PropTypes.shape({
         userId: PropTypes.number.isRequired,
         username: PropTypes.string.isRequired,
-        type: PropTypes.string.isRequired,
+        role: PropTypes.string.isRequired,
         token: PropTypes.string.isRequired,
         avatar: PropTypes.string,
         place: PropTypes.string,
